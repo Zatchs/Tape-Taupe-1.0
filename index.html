@@ -9,11 +9,11 @@
 </head>
 
 <body>
-
+    <audio autoplay="false" id="MonSon" src="punch.mp3"></audio>
     <img id="image">
 
     <h1> Frappe! Score :<span class="score"> 0 </span></h1>
-    <button class="button" onclick="startGame()">Commence !</button>
+    <button id="punch" class="button" onclick="startGame()">Commence !</button>
     <p>Multiplicateur <span class="multiplicateur"> 1 </span></p>
     <div class="game">
         <div class="trou trou1">
@@ -160,6 +160,16 @@
            romains.forEach(romain => romain.addEventListener('click', bonk));
            var audio = new Audio('musique.mp3');
            audio.play();
+
+           document.getElementById('punch').addEventListener('click', function () {
+            JouerSon();
+            });
+
+            function JouerSon() {
+              var sound = document.getElementById("MonSon");
+              sound.play();
+        }
+
 
             romains.forEach(romain => romain.addEventListener('click', bonk));
     </script>
