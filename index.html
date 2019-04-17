@@ -73,7 +73,7 @@
             function randomTrou(trous) {
                 const idx = Math.floor(Math.random() * trous.length); // Apparition aléatoire des trous
                 const trou = trous[idx]; // On dit que ce qui apparait aléatoirement doit etre dans un trou
-                if (trou === dernierTrou) { //si trou est utilisé plusieurs fois 
+                if (trou === dernierTrou) { //si trou est utilisé plusieurs fois
                     return randomTrou(trous); // alors renvoyer la fonction
                 }
                 dernierTrou = trou; // On dit que le derniertrou est égal au trou utilisé
@@ -90,7 +90,7 @@
                 }, time);
             }
 
-            function startGame() {
+            function startGame() { //Variable pour définir les paramètres du début du jeu
                 scoreBoard.textContent = 0; //
                 multiplie.textContent = 1;
                 timeUp = false; // Pour redire qu'au lancement de la partie, le temps de la partie n'est pas terminé
@@ -157,6 +157,9 @@
             //}
             */
 
+           romains.forEach(romain => romain.addEventListener('click', bonk));
+           var audio = new Audio('musique.mp3');
+           audio.play();
 
             romains.forEach(romain => romain.addEventListener('click', bonk));
     </script>
